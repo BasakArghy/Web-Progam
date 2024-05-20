@@ -20,7 +20,14 @@
             <!-- ================ Order Details List ================= -->
             <div class="details">
                 <div class="recentOrders">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                    @endif
                     <div class="cardHeader">
+                       
                         <h2>Reservations</h2>
                        
                     </div>
@@ -34,7 +41,8 @@
                                 <td>name</td>
                                 <td>date</td>
                                 <td>time</td>
-                                <td></td>
+                                <td>Edit</td>
+                                <td>Delete</td>
                             </tr>
                         </thead>
 
@@ -49,19 +57,14 @@
                                 <td>{{$reservation->time}}</td>
                                 <td  >
                     
-                                    <div>
-                                        <a href="{{route('reservation.edit',$reservation->id)}}" >Edit</a>
+                                        <a href="{{route('reservation.edit',$reservation->id)}}" style="color: black">Edit</a> </td>
+                                        <td>
                                         <form  method="POST" action="{{route('reservation-destroy',$reservation->id)}}"
                                      onsubmit="return confirm('Are you sure?');">
                                      @method('put')
                                      @csrf
                 
-                  @if(Session::has('success'))
-                    <div class="alert alert-success">{{Session::get('success')}}</div>
-                    @endif
-                    @if(Session::has('fail'))
-                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                    @endif
+                
                                     <button type="submit" >Delete</button> 
                                     </form>
                                     </div>

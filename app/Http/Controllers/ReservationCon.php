@@ -18,22 +18,41 @@ public function edit($id){
 
 public function update(Request $request,$id)
 {
-    $request->validate([
-        'name'=>'required',
-        'number'=>'required',
-        'date'=>'required',
-        'time'=>'required'
-    ]);
+ 
 
   
     $reservation = Reservation::findorFail($id);
 
-    $reservation->update([
-        'name'=>$request->name,
-        'description' =>$request->description,
-        
-    ]);
-    return to_route('reservation');
+    $reservation->shop_id=$request->shop_id;
+    $reservation->name=$request->name;
+    $reservation->number=$request->number;
+    
+    $reservation->date=$request->date ;
+    $reservation->time=$request->time;
+    $flag=0;
+    $res=0;
+    $count = Reservation::where('time',$request->time)->count();
+    if($count!=0)
+    {
+        $count2 = Reservation::where('date',$request->date)->count();
+        if($count2!=0){
+           $flag=1;
+          
+           
+
+
+        }
+    }
+if($flag==0){
+$res=$reservation->save();
+
+}
+if($res){
+return redirect()->route('reservation')->with('success','Reservation updated successfully');
+}
+else{
+    return redirect()->route('reservation')->with('success','Reservation not updated');
+}
 
 }
 public function destroy($id)

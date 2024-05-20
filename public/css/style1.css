@@ -296,6 +296,9 @@ body {
   color: var(--white);
   border-radius: 6px;
 }
+.cardHeader a .updatebtn{
+color: #f00;
+}
 
 .details table {
   width: 100%;

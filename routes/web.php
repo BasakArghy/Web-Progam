@@ -28,6 +28,7 @@ Route::post('/appointed',[AppointmentController::class,'appointed'])->name('appo
 Route::get('/admin',[AdminController::class,'index'])->middleware('admin');
 Route::get('/reservation',[ReservationCon::class,'index'])->middleware('admin')->name('reservation');
 Route::get('/reservation/{reservation}/edit',[ReservationCon::class,'edit'])->middleware('admin')->name('reservation.edit');
+Route::put('/reservation/{reservation}',[ReservationCon::class,'update'])->middleware('admin')->name('reservation.update');
 Route::put('/reservation-destroy/{reservation}',[ReservationCon::class,'destroy'])->middleware('admin')->name('reservation-destroy');
 
 
