@@ -6,9 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['shop_id'])) {
     // You can use this value as needed, e.g., store it in a session or display it
 }
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
+@include('header');
     <title>Educational registration form</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -291,5 +289,4 @@ select .id{
 
 
     </div>
-  </body>
-</html>
+    @include('footer');

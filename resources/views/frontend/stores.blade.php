@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel Multiple Marker</title>   
-</head>
+@include('header');
 <style>
     #map{
         height:500px;
@@ -81,5 +77,4 @@
 
 
    
-</body>
-</html>
+@include('footer');

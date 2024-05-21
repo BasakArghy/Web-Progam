@@ -35,11 +35,11 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="users">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Customers</span>
+                        <span class="title">Users</span>
                     </a>
                 </li>
 

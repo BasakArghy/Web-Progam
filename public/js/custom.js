@@ -5,6 +5,22 @@ function getYear() {
     document.querySelector("#displayYear").innerHTML = currentYear;
 }
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.nav-item nav-link');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(i => i.classList.remove('active')); // Remove 'active' class from all items
+            item.classList.add('active'); // Add 'active' class to the clicked item
+        });
+    });
+});
+
+
+
+
 getYear();
 
 

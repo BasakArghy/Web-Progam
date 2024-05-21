@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\logoutController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ReservationCon;
+use App\Http\Controllers\UsersCon;
 use App\Http\Controllers\ReservationFrontCon;
+use App\Models\User;
 
 Route::get('/',[custom_auth_controller::class,'dashboard'])->name('dashboard');
 Route::get('/login',[custom_auth_controller::class,'login'])->middleware('alreadyLoggedIn');
@@ -30,7 +32,7 @@ Route::get('/reservation',[ReservationCon::class,'index'])->middleware('admin')-
 Route::get('/reservation/{reservation}/edit',[ReservationCon::class,'edit'])->middleware('admin')->name('reservation.edit');
 Route::put('/reservation/{reservation}',[ReservationCon::class,'update'])->middleware('admin')->name('reservation.update');
 Route::put('/reservation-destroy/{reservation}',[ReservationCon::class,'destroy'])->middleware('admin')->name('reservation-destroy');
-
+Route::get('/users',[UsersCon::class,'index'])->middleware('admin')->name('users');
 
 
 

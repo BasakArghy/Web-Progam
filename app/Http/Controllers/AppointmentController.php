@@ -22,8 +22,10 @@ class AppointmentController extends Controller
     }
     public function stores(){
         $user=User::all();
-       
-        return view('frontend.stores',compact('user'));
+        if(Session::has('loginId')){
+            $data =User::Where('id','=',Session::get('loginId'))->first();
+        }
+        return view('frontend.stores',compact('user','data'));
     }
 
     public function appointed(Request $request){
