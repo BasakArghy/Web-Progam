@@ -41,5 +41,7 @@ Route::put('/users-destroy/{user}',[UsersCon::class,'destroy'])->middleware('adm
 
 Route::get('/products',[ProductCon::class,'index'])->middleware('admin')->name('products');
 Route::get('/products/create',[ProductCon::class,'create'])->middleware('admin')->name('products/create');
-
-
+Route::post('/products/store',[ProductCon::class,'store'])->middleware('admin')->name('products.store');
+Route::get('/products/{product}/edit',[ProductCon::class,'edit'])->middleware('admin')->name('products.edit');
+Route::put('/products/{product}',[ProductCon::class,'update'])->middleware('admin')->name('products.update');
+Route::put('/products-destroy/{product}',[ProductCon::class,'destroy'])->middleware('admin')->name('products-destroy');

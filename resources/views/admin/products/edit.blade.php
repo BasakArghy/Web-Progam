@@ -30,22 +30,24 @@
         <div class="box">
             <h5>Product details</h5>
             <br>
-    <form  action="{{route('products.store')}}"  method="POST"  enctype="multipart/form-data" >
+    <form  action="{{route('products.update',$product->id)}}"  method="POST"  enctype="multipart/form-data" >
+        @method('put')
         @csrf
+
         <div class="mb-5">
             <label for="name" class="form-label">Name</label>
-            <input type="text" required minlength="2" maxlength="50" class="form-control" id="name" name="name" placeholder="Name">
+            <input type="text" required minlength="2" maxlength="50" class="form-control" id="name" name="name" placeholder="Name" value="{{$product->name}}">
             <div class="invalid-feedback">Please provide your name</div>
         </div>  
     
       
         <div class="mb-5">
             <label for="description" class="form-label">Description</label>
-            <textarea maxlength="2500" required class="form-control" id="description" name="description" rows="3"></textarea>
+            <textarea maxlength="2500" required class="form-control" id="description" name="description" rows="3" placeholder="">{{$product->description}}</textarea>
         </div>
         <div class="mb-5">
             <label for="image" class="form-label">Image</label>
-            <input type="file"  class="form-control" id="image" name="image"
+            <input type="file"  class="form-control" id="image" name="image" value="{{$product->image}}"
                 >
             
         </div>

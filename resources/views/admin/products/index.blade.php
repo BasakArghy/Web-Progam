@@ -48,16 +48,17 @@
                         <tbody>
                             @foreach ($products as $product)
                             <tr>
-                                <td>{{$$product->id}}</td>
-                                <td>{{$$product->name}}</td>
-                                <td>{{$$product>description}}</td>
-                                <td><img src="{{$product->image}}" alt=""></td>
+                                <td>{{$product->id}}</td>
+                                <td>{{$product->name}}</td>
+                                <td>{{$product->description}}</td>
+                                <td><img src="{{$product->image}}" width="100" height="100">
+                                </td>
                                
                                 <td  >
                     
-                                        <a href="{{route('product.edit',$product->id)}}" style="color: black">Edit</a> </td>
+                                        <a href="{{route('products.edit',$product->id)}}" style="color: black">Edit</a> </td>
                                         <td>
-                                        <form  method="POST" action="{{route('reservation-destroy',$product->id)}}"
+                                        <form  method="POST" action="{{route('products-destroy',$product->id)}}"
                                      onsubmit="return confirm('Are you sure?');">
                                      @method('put')
                                      @csrf
