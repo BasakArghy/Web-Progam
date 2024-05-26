@@ -32,9 +32,11 @@ Route::get('/reservation',[ReservationCon::class,'index'])->middleware('admin')-
 Route::get('/reservation/{reservation}/edit',[ReservationCon::class,'edit'])->middleware('admin')->name('reservation.edit');
 Route::put('/reservation/{reservation}',[ReservationCon::class,'update'])->middleware('admin')->name('reservation.update');
 Route::put('/reservation-destroy/{reservation}',[ReservationCon::class,'destroy'])->middleware('admin')->name('reservation-destroy');
+
 Route::get('/users',[UsersCon::class,'index'])->middleware('admin')->name('users');
-
-
+Route::get('/users/{user}/edit',[UsersCon::class,'edit'])->middleware('admin')->name('users.edit');
+Route::put('/users/{user}',[UsersCon::class,'update'])->middleware('admin')->name('users.update');
+Route::put('/users-destroy/{user}',[UsersCon::class,'destroy'])->middleware('admin')->name('users-destroy');
 
 
 

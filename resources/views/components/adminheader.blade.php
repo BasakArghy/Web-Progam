@@ -8,6 +8,7 @@
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="css/style1.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
  
 </head>
 
@@ -19,7 +20,8 @@
                 <li>
                     <a href="/">
                         <span class="icon">
-                           <img src="images/salon_logo1.jpg" width="100%" height="100%">
+                          <img src="images/salon_logo1.jpg" width="100%" height="100%"> 
+                           
                         </span>
                         
                     </a>
@@ -55,13 +57,13 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
+                            <ion-icon name="cart-outline"></ion-icon>
                         </span>
-                        <span class="title">Help</span>
+                        <span class="title">Product</span>
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
@@ -77,7 +79,7 @@
                         </span>
                         <span class="title">Password</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="logout">

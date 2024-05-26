@@ -268,11 +268,8 @@ select .id{
 
           <input type="text" name="number" id="number" placeholder="Your Phone Number" value="{{$data->number}}">
           <label for="shop_id">Shop ID</label>
-          <input  id="shop_id" name="shop_id" value=" <?php
-          if (isset($selectedId)) {?>
-              {{$selectedId}}
-         <?php }
-          ?>">
+          <input  id="shop_id" name="shop_id" value="<?php
+          if (isset($selectedId)){?>{{$selectedId}}<?php } ?>">
 		  <label for="date">Select Date</label>
           <input type="date" name="date" id="date">
 		  <label for="time">Select Time</label>

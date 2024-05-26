@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style3.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4" style="margin-top::20px;">
-            <br>
-                <h4>Login</h4>
-<hr>
-                <form action="{{route('login-user')}}" method="post">
+    <div class="infinity-container" style="background-image: url('images/bg3.jpg');">
+		<!-- Company Logo -->
+		
+
+		<!-- FORM CONTAINER BEGIN -->
+		<div class="infinity-form-block">
+			<div class="infinity-click-box text-center">Login into your account</div>
+
+			<div class="infinity-fold">
+				<div class="infinity-form">
+            
+
+                <form action="{{route('login-user')}}" method="post" class="form-box">
                 @if(Session::has('success'))
                     <div class="alert alert-success">{{Session::get('success')}}</div>
                     @endif
@@ -24,29 +31,33 @@
                     @csrf
 
 
-<div class="form-group">
+                    <div class="form-input">
 <label for="">Phone Number</label>
-<input type="text" class="form-control" placeholder="Enter Phone Number" name="number" value="{{old('number')}}">
+<input type="text" class="form-control" placeholder="Enter Phone Number" name="number" value="{{old('number')}}" required>
 <span class="text-danger">@error('number'){{$message}}@enderror</span>
 </div>
 
-<div class="form-group">
+<div class="form-input">
 <label for="password">Password</label>
-<input type="text" class="form-control" placeholder="Enter Password" name="password" value="">
+<input type="text" class="form-control" placeholder="Enter Password" name="password" value="" required>
 <span class="text-danger">@error('password'){{$message}}@enderror</span>
 </div>
 <br>
-<div class="form-group">
-    <button class="btn btn-block btn-primary" type="submit">Login</button>
-    </div>
+<div class="col-12 px-0 text-right">
+    <button type="submit" class="btn mb-3">Login</button>
+</div>
 <br>
-<a href="registration">New user !! Register Here. </a>
+<div class="text-center">Don't have an account?
+    <a class="register-link" href="registration">Register here</a>
+</div>
+
 
 </form>
-            </div>
-        </div>
-    </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
- integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</div>
+</div>
+</div>
+<!-- FORM CONTAINER END -->
+</div>
+
 </body>
 </html>

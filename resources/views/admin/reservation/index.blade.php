@@ -10,7 +10,7 @@
               
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="images/user.png" alt="">
                 </div>
             </div>
 

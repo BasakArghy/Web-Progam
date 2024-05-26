@@ -10,7 +10,7 @@
               
 
                 <div class="user">
-                    <img src="images/customer01.jpg" alt="">
+                    <img src="images/user.png" alt="">
                 </div>
             </div>
 
@@ -58,9 +58,9 @@
                                 <td>{{$user->price}}</td>
                                 <td  >
                     
-                                        <a href="{{route('reservation.edit',$user->id)}}" style="color: black">Edit</a> </td>
+                                        <a href="{{route('users.edit',$user->id)}}" style="color: black">Edit</a> </td>
                                         <td>
-                                        <form  method="POST" action="{{route('reservation-destroy',$user->id)}}"
+                                        <form  method="POST" action="{{route('users-destroy',$user->id)}}"
                                      onsubmit="return confirm('Are you sure?');">
                                      @method('put')
                                      @csrf
@@ -79,12 +79,7 @@
                 </div>
                 <div class="details">
                 <div class="recentOrders">
-                    @if(Session::has('success'))
-                    <div class="alert alert-success">{{Session::get('success')}}</div>
-                    @endif
-                    @if(Session::has('fail'))
-                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                    @endif
+                    
                     <div class="cardHeader">
                        
                         <h2>Customer</h2>
@@ -111,9 +106,9 @@
                                 <td>{{$user->name}}</td>
                                 <td  >
                     
-                                        <a href="{{route('reservation.edit',$user->id)}}" style="color: black">Edit</a> </td>
+                                        <a href="{{route('users.edit',$user->id)}}" style="color: black">Edit</a> </td>
                                         <td>
-                                        <form  method="POST" action="{{route('reservation-destroy',$user->id)}}"
+                                        <form  method="POST" action="{{route('users-destroy',$user->id)}}"
                                      onsubmit="return confirm('Are you sure?');">
                                      @method('put')
                                      @csrf
