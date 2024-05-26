@@ -55,7 +55,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="products">
                         <span class="icon">
                             <ion-icon name="cart-outline"></ion-icon>
                         </span>

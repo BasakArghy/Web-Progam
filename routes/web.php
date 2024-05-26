@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 
 use App\Http\Controllers\Admin\logoutController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ProductCon;
 use App\Http\Controllers\ReservationCon;
 use App\Http\Controllers\UsersCon;
 use App\Http\Controllers\ReservationFrontCon;
@@ -38,7 +39,7 @@ Route::get('/users/{user}/edit',[UsersCon::class,'edit'])->middleware('admin')->
 Route::put('/users/{user}',[UsersCon::class,'update'])->middleware('admin')->name('users.update');
 Route::put('/users-destroy/{user}',[UsersCon::class,'destroy'])->middleware('admin')->name('users-destroy');
 
-
-
+Route::get('/products',[ProductCon::class,'index'])->middleware('admin')->name('products');
+Route::get('/products/create',[ProductCon::class,'create'])->middleware('admin')->name('products/create');
 
 
