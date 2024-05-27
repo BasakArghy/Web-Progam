@@ -21,11 +21,11 @@
                 <div class="widget_menu">
                    <h3>Menu</h3>
                    <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Hair Styles</a></li>
-                      <li><a href="#">Nearest Salon</a></li>
-                      <li><a href="#">Appointment</a></li>
-                      <li><a href="#">Products</a></li>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/myappoint">My reservation</a></li>
+                      <li><a href="stores">Nearest Salon</a></li>
+                      <li><a href="/appoint">Appointment</a></li>
+                      <li><a href="/product">Products</a></li>
                       
                    </ul>
                 </div>
@@ -35,11 +35,11 @@
                    <h3>Account</h3>
                    <ul>
                       <li><a href="#">Account</a></li>
-                      <li><a href="#">Checkout</a></li>
+                    
                       <li><a href="login">Login</a></li>
                       <li><a href="register">Register</a></li>
-                      <li><a href="#">Status</a></li>
-                      <li><a href="#">Charts</a></li>
+                      <li><a href="/myappoint">Status</a></li>
+                      
                    </ul>
                 </div>
              </div>

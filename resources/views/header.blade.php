@@ -37,7 +37,7 @@
                            <a class="nav-link "  href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="blog_list.html">Hair Styles</a>
+                           <a class="nav-link" href="/myappoint">My reservation</a>
                         </li>
                         <li class="nav-item ">
                           
@@ -50,7 +50,7 @@
                            <a class="nav-link"  href="{{URL::to('/appoint')}}">Appointment</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Products</a>
+                           <a class="nav-link" href="/product">Products</a>
                         </li>
                         <li class="nav-item dropdown"  >
                            

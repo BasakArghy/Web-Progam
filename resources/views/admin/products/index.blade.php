@@ -39,6 +39,7 @@
                                 <td>id</td>
                                 <td>name</td>
                                 <td>description</td>
+                                <td>price</td>
                                 <td>image</td>
                                 <td>Edit</td>
                                 <td>Delete</td>
@@ -51,6 +52,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->description}}</td>
+                                <td>{{$product->price}}</td>
                                 <td><img src="{{$product->image}}" width="100" height="100">
                                 </td>
                                

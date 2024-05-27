@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
@@ -81,11 +82,12 @@ return view("auth.login");
     }
     public function dashboard(){
         $data= array();
+        $products=Product::all();
         if(Session::has('loginId')){
             $data =User::Where('id','=',Session::get('loginId'))->first();
         }
 
-        return view('dashboard',compact('data'));
+        return view('dashboard',compact('data','products'));
     }
     public function logout(){
         if(Session::has('loginId')){

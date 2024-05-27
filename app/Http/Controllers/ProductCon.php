@@ -22,6 +22,7 @@ public function store(Request $request)
 $product = new Product();
 $product->name=$request->name;
 $product->description=$request->description;
+$product->price=$request->price;
 $product->image='/storage/'.$image;
 
 
@@ -54,6 +55,7 @@ public function update(Request $request,$id){
     
      $product->name=$request->name;
      $product->description=$request->description;
+     $product->price=$request->price;
      $product->image=$image;
      
      

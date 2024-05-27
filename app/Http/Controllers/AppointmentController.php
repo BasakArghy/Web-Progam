@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,12 +21,31 @@ class AppointmentController extends Controller
         return view('frontend.reservationFrontend',compact('data','user','reservations'));
        
     }
+    public function myappoint(){
+        $user=User::all();
+        $reservations = Reservation::all();
+        $data= array();
+        if(Session::has('loginId')){
+            $data =User::Where('id','=',Session::get('loginId'))->first();
+        }
+
+        return view('frontend.myappoint',compact('data','user','reservations'));
+       
+    }
     public function stores(){
         $user=User::all();
         if(Session::has('loginId')){
             $data =User::Where('id','=',Session::get('loginId'))->first();
         }
         return view('frontend.stores',compact('user','data'));
+    }
+    public function product(){
+        $products=Product::all();
+        $user=User::all();
+        if(Session::has('loginId')){
+            $data =User::Where('id','=',Session::get('loginId'))->first();
+        }
+        return view('frontend.productfront',compact('data','products'));
     }
 
     public function appointed(Request $request){

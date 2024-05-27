@@ -51,6 +51,12 @@
                 >
             
         </div>
+        <div class="mb-5">
+            <label for="name" class="form-label">Price</label>
+            <input type="text" required minlength="2" maxlength="50" class="form-control" id="price" name="price" placeholder="price"
+            value="{{$product->price}}">
+            <div class="invalid-feedback">Please provide price</div>
+        </div>
         <button type="submit" class="btn btn-primary px-4">Submit</button>
     </form>
     </div>
