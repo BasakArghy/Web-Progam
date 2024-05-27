@@ -369,10 +369,14 @@
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
-                          
-                           <a href="" class="option2">
+                           <form action="{{route('checkout',$product->id)}}" method="POST" >
+                              @method('put')
+                              <input type="hidden" name="_token" value="{{csrf_token()}}">
+                              <button type="submit" class="option2" >  Buy Now</button>
+                          </form>
+                           {{-- <a href="" class="option2">
                            Buy Now
-                           </a>
+                           </a> --}}
                         </div>
                      </div>
                      <div class="img-box">
@@ -383,7 +387,7 @@
                            {{$product->name}}
                         </h5>
                         <h6>
-                           {{$product->price}}
+                           ${{$product->price}}
                         </h6>
                      </div>
                   </div>

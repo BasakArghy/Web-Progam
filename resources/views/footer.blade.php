@@ -4,7 +4,7 @@
           <div class="col-md-4">
               <div class="full">
                  <div class="logo_footer">
-                   <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
+                   <img width="210" src="images/salon_logo1.jpg" alt="#" />
                  </div>
                  <div class="information_f">
                    <p><strong>ADDRESS:</strong> Daulatpur, Khulna, Bangladesh</p>
@@ -37,7 +37,7 @@
                       <li><a href="#">Account</a></li>
                     
                       <li><a href="login">Login</a></li>
-                      <li><a href="register">Register</a></li>
+                      <li><a href="registration">Register</a></li>
                       <li><a href="/myappoint">Status</a></li>
                       
                    </ul>

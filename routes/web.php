@@ -47,3 +47,9 @@ Route::post('/products/store',[ProductCon::class,'store'])->middleware('admin')-
 Route::get('/products/{product}/edit',[ProductCon::class,'edit'])->middleware('admin')->name('products.edit');
 Route::put('/products/{product}',[ProductCon::class,'update'])->middleware('admin')->name('products.update');
 Route::put('/products-destroy/{product}',[ProductCon::class,'destroy'])->middleware('admin')->name('products-destroy');
+
+
+Route::get('/stripe','App\Http\Controllers\StripeController@index')->name('index');
+Route::put('/{product}/checkout','App\Http\Controllers\StripeController@checkout')->name('checkout');
+Route::put('/{product}/checkoutRe','App\Http\Controllers\StripeController@checkoutRe')->name('checkoutRe');
+Route::get('/success','App\Http\Controllers\StripeController@success')->name('success');

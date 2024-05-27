@@ -10,7 +10,7 @@
                
 
                 <div class="user">
-                    <img src="images/user.png" alt="">
+                    <a href="/"><img src="images/home.jpeg"  alt=""></a>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
+                        <div class="numbers">{{$products->count()}}</div>
                         <div class="cardName">Products</div>
                     </div>
 

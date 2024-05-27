@@ -65,7 +65,11 @@
  </ul>
 
                        
+                     <?php if($data->type=="admin"){?>
+                        <a class="nav-link" style="background-color: rgb(111, 165, 241) " href="/admin">Admin Pannel</a>
                      <?php }
+                     
+                  }
                           else{
                            ?>
                            <a class="nav-link" style="background-color: rgb(111, 165, 241) " href="login">login</a>

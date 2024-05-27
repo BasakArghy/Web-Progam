@@ -36,7 +36,7 @@
       padding: 25px;
       background: rgba(255, 254, 254, 0.5); 
       }
-      .left-part, form {
+      .left-part {
       padding: 25px;
       }
       .left-part {
@@ -45,9 +45,7 @@
       .fa-graduation-cap {
       font-size: 72px;
       }
-      form {
-      background: rgba(0, 0, 0, 0.7); 
-      }
+      
       .title {
       display: flex;
       align-items: center;
@@ -85,30 +83,16 @@
       .checkbox a:hover {
       color: #85d6de;
       }
-      .btn-item, button {
-      padding: 10px 5px;
-      margin-top: 20px;
-      border-radius: 5px; 
-      border: none;
-      background: #26a9e0; 
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 400;
-      color: #100e0e;
-      }
+     
       .btn-item {
       display: inline-block;
       margin: 20px 5px 0;
       }
-      button {
-      width: 100%;
-      }
+     
 	  h2,i {
       color: rgb(247, 247, 247)
       }
-      button:hover, .btn-item:hover {
-      background: #85d6de;
-      }
+      
       @media (min-width: 568px) {
       html, body {
       height: 100%;
@@ -184,6 +168,9 @@ select .id{
           <table class="box" >
             <thead>
                 <tr>
+                  <th >
+                    shop_id
+                </th>
                     <th >
                         name
                     </th>
@@ -196,15 +183,27 @@ select .id{
                     <th>
                         time
                     </th>
+                    <th>
+                      Bill
+                  </th>
+                  <th>
+                   pay
+                </th>
+                <th>
+                 cancel
+               </th>
                    
                     
                 </tr>
             </thead>
             <tbody ><div class="bo">
                 @foreach ( $reservations as  $reservation)
-               <?php 
+               <?php $price=0;
                 if($reservation->number==$data->number)
                 {?><tr >
+                   <td  >
+                    {{$reservation->shop_id}}
+                </td>
                     <td  >
                         {{$reservation->name}}
                     </td>
@@ -217,6 +216,34 @@ select .id{
                     <td  >
                         
                       {{$reservation->time}}
+    
+                    </td>
+                    <td  >
+                      @foreach ( $user as  $use)
+                      <?php if($use->id==$reservation->shop_id){$price=$use->price ?>
+                        {{$use->price}}
+                            <?php }?>
+                            @endforeach
+                    </td>
+                    <td  >
+                        
+                      <form action="{{route('checkoutRe',$price)}}" method="POST" >
+                        @method('put')
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <button type="submit" class="option2" >  Pay Now</button>
+                    </form>
+    
+                    </td>
+                    <td  >
+                        
+                      <form  method="POST" action="{{route('reservation-destroy',$reservation->id)}}"
+                        onsubmit="return confirm('Are you sure?');">
+                        @method('put')
+                        @csrf
+   
+   
+                       <button type="submit" class="fo" >Cancel</button> 
+                       </form>
     
                     </td>
                 </tr>

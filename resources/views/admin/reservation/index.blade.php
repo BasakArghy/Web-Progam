@@ -10,7 +10,7 @@
               
 
                 <div class="user">
-                    <img src="images/user.png" alt="">
+                    <a href="/"><img src="images/home.jpeg"  alt=""></a>
                 </div>
             </div>
 
