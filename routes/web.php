@@ -22,7 +22,8 @@ Route::get('/logout',[custom_auth_controller::class,'logout']);
 
 
 Route::get('/appoint',[AppointmentController::class,'index'])->middleware('isLogedIn');
-Route::get('/myappoint',[AppointmentController::class,'myappoint'])->middleware('isLogedIn');
+Route::get('/myappoint',[AppointmentController::class,'myappoint'])->middleware('isLogedIn')->name('myappoint');
+Route::get('/storeappoint',[AppointmentController::class,'storeappoint'])->middleware('isLogedIn')->name('storeappoint');
 Route::get('/stores',[AppointmentController::class,'stores']);
 Route::get('/product',[AppointmentController::class,'product']);
 Route::post('/appointed',[AppointmentController::class,'appointed'])->name('appointed');

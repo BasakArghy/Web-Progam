@@ -59,7 +59,7 @@ return redirect()->away($session->url);
 
     ],
     'mode' => 'payment',
-    'success_url' =>route('success'),
+    'success_url' =>route('myappoint'),
     'cancel_url' =>route('index'),
 
 ]);

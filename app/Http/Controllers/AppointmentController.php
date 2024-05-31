@@ -32,6 +32,18 @@ class AppointmentController extends Controller
         return view('frontend.myappoint',compact('data','user','reservations'));
        
     }
+    public function storeappoint (){
+        $user=User::all();
+        $reservations = Reservation::all();
+        $data= array();
+        if(Session::has('loginId')){
+            $data =User::Where('id','=',Session::get('loginId'))->first();
+        }
+
+        return view('frontend.storeappoint',compact('data','user','reservations'));
+       
+    }
+
     public function stores(){
         $user=User::all();
         if(Session::has('loginId')){

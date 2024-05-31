@@ -36,8 +36,12 @@
                         <li class="nav-item">
                            <a class="nav-link "  href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item"><?php if(Session::has('loginId')) { if($data->type=="owner"){ ?>
+                           <a class="nav-link" href="storeappoint">store reservations</a>
+                           <?php } 
+                           else {?>
                            <a class="nav-link" href="/myappoint">My reservation</a>
+                           <?php } }?>
                         </li>
                         <li class="nav-item ">
                           
